@@ -24,6 +24,7 @@ import {
     Logout,
     Person,
     Settings,
+    AccountBalance,
 } from '@mui/icons-material';
 import { useAuth } from '@/providers/KeycloakProvider';
 
@@ -141,6 +142,25 @@ const Navbar: React.FC = () => {
                             </Button>
                         );
                     })}
+                    <Button
+                        color="inherit"
+                        startIcon={<AccountBalance />}
+                        component="a"
+                        href="https://pmb.ro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                            backgroundColor: 'transparent',
+                            borderRadius: 2,
+                            px: 2,
+                            '&:hover': {
+                                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                            },
+                            transition: 'all 0.2s ease',
+                        }}
+                    >
+                        PMB
+                    </Button>
                 </Box>
 
                 {/* User Role Chip */}
