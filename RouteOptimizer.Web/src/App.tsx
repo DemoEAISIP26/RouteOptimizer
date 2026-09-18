@@ -19,9 +19,9 @@ import { PerformanceMonitor } from './utils/performance';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#800020',
-            light: '#A3324A',
-            dark: '#5C0017',
+            main: '#1976d2',
+            light: '#42a5f5',
+            dark: '#1565c0',
         },
         secondary: {
             main: '#dc004e',
