@@ -7,7 +7,15 @@ from pathlib import Path
 
 import pytest
 
-SRC = Path(__file__).resolve().parents[2] / "RouteOptimizer.Web" / "src"
+
+def _repo_root() -> Path:
+    for parent in Path(__file__).resolve().parents:
+        if (parent / "RouteOptimizer.Web").is_dir():
+            return parent
+    raise RuntimeError("RouteOptimizer.Web not found above this test file")
+
+
+SRC = _repo_root() / "RouteOptimizer.Web" / "src"
 APP = (SRC / "App.tsx").read_text(encoding="utf-8")
 NAVBAR = (SRC / "components" / "common" / "Navbar.tsx").read_text(encoding="utf-8")
 LOGIN = (SRC / "pages" / "LoginPage.tsx").read_text(encoding="utf-8")
