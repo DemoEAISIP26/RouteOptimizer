@@ -1,0 +1,20 @@
+{
+  "task_id": "26e10734-4d4c-4fc8-9a03-0e2bba54c469",
+  "ticket_key": "EMPTCM-323",
+  "module_name": "Apply the new brand identity across the web app",
+  "criteria": [
+    "In App.tsx, palette.primary becomes main '#10875A', light '#3FB489', dark '#0B5E3F'. palette.secondary and palette.background are left exactly as they are.",
+    "In the same createTheme call, typography gains fontFamily: 'Georgia, \"Times New Roman\", Times, serif'. The existing h4 and h5 fontWeight entries stay.",
+    "Nothing else in App.tsx changes: no new ThemeProvider, no dark mode, no component overrides, no routing changes, no new imports other than what the theme needs.",
+    "The AppBar in Navbar.tsx keeps having NO colour prop and no background in its sx: the navbar turns emerald green purely through the theme.",
+    "Navbar.tsx gains AccountBalance to its existing @mui/icons-material import block, and the PMBButton exactly as given above. Two of its values are checked literally: the Button's child text is exactly 'PMB', and its href is exactly 'https://pmb.ro'. The icon is AccountBalance, the label is not.",
+    "PMBButton is rendered in the Toolbar AFTER the navigation Box and BEFORE the role Chip, so it sits on the right-hand side next to the role chip. It is not filtered by hasRole and is not part of getNavigationItems(), so every signed-in user sees it in both navigations.",
+    "In LoginPage.tsx every hardcoded old-blue value is replaced: '#1976d2' -> '#10875A', '#42a5f5' -> '#3FB489', '#1565c0' -> '#0B5E3F'. The gradients keep their exact structure (135deg, same stops), only the colours change. Nothing else in that file changes.",
+    "getRoleColor in Navbar.tsx is NOT changed: traveller stays '#1976d2'. Role colours encode role identity, not branding.",
+    "`npm run type-check` and `npm run lint` in RouteOptimizer.Web both pass."
+  ],
+  "model": "open-mistral-nemo",
+  "test_file": "test_identity.py",
+  "generated_by": "S5 test-generation agent",
+  "generated_at": "2026-09-23T07:46:34+00:00"
+}

@@ -24,8 +24,32 @@ import {
     Logout,
     Person,
     Settings,
+    AccountBalance,
 } from '@mui/icons-material';
 import { useAuth } from '@/providers/KeycloakProvider';
+
+const PMBButton: React.FC = () => {
+    return (
+        <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<AccountBalance />}
+            sx={{
+                ml: 2,
+                mr: 2,
+                borderRadius: 2,
+                textTransform: 'none',
+                fontWeight: 600,
+                backgroundColor: '#dc004e',
+                '&:hover': {
+                    backgroundColor: '#c2185b',
+                },
+            }}
+        >
+            PMB
+        </Button>
+    );
+};
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
@@ -109,7 +133,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <AppBar position="static" elevation={2}>
+        <AppBar position="static" elevation={2} sx={{ backgroundColor: 'primary.main' }}>
             <Toolbar>
                 {/* Logo and Title */}
                 <DirectionsBus sx={{ mr: 2 }} />
@@ -142,6 +166,9 @@ const Navbar: React.FC = () => {
                         );
                     })}
                 </Box>
+
+                {/* PMB Button */}
+                <PMBButton />
 
                 {/* User Role Chip */}
                 <Chip

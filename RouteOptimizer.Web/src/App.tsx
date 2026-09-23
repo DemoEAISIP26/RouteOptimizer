@@ -19,9 +19,9 @@ import { PerformanceMonitor } from './utils/performance';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#1976d2',
-            light: '#42a5f5',
-            dark: '#1565c0',
+            main: '#10875A',
+            light: '#3FB489',
+            dark: '#0B5E3F',
         },
         secondary: {
             main: '#dc004e',
@@ -37,6 +37,7 @@ const theme = createTheme({
         h5: {
             fontWeight: 600,
         },
+        fontFamily: 'Georgia, "Times New Roman", Times, serif',
     },
 });
 
